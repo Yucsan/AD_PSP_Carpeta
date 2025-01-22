@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JPA_herencia&apos; to &apos;JPA_herencia_SingleTable&apos;" description="Rename resource &apos;JPA_herencia&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/JPA_herencia" name="JPA_herencia_SingleTable" stamp="1731483313533" updateReferences="true"/>
+</session>

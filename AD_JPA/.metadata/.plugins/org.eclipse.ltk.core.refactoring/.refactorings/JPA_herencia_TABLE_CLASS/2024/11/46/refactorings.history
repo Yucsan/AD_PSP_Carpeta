@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;test.Test_JOIN&apos; to &apos;Test_TABLE&apos;&#x0A;- Original project: &apos;JPA_herencia_TABLE_CLASS&apos;&#x0A;- Original element: &apos;test.Test_JOIN&apos;&#x0A;- Renamed element: &apos;test.Test_TABLE&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Test_JOIN&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;test{Test_JOIN.java[Test_JOIN" matchStrategy="1" name="Test_TABLE" qualified="false" references="true" similarDeclarations="false" stamp="1731484259908" textual="false" version="1.0"/>
+</session>

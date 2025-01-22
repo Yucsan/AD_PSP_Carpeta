@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.io.StringWriter"/>
+    <fullyQualifiedTypeName name="javax.xml.parsers.ParserConfigurationException"/>
+    <fullyQualifiedTypeName name="dom.DomXML"/>
+    <fullyQualifiedTypeName name="org.xml.sax.SAXException"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
+    <fullyQualifiedTypeName name="javax.xml.xpath.XPathFactory"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
+    <fullyQualifiedTypeName name="javax.xml.xpath.XPathConstants"/>
+</qualifiedTypeNameHistroy>

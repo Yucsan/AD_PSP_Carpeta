@@ -1,0 +1,41 @@
+package test;
+
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import dom.DomXML;
+
+public class Test3_Busqueda_Modificacion_XML {
+
+	public static void main(String[] args) throws SAXException, IOException, TransformerConfigurationException, TransformerException {
+		
+		try{
+			DomXML documento = new DomXML("./fuentes/estudiantes.xml");
+			
+			//buscamos
+			NodeList listaNodos = documento.getDocumento().getElementsByTagName("apodo");
+			for(int i=0; i<listaNodos.getLength(); i++) {
+				Node nodo = listaNodos.item(i);
+				if(nodo instanceof Element) {
+					System.out.println(nodo.getTextContent());
+				}
+			}
+			
+			
+			
+		}catch(ParserConfigurationException e) {
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

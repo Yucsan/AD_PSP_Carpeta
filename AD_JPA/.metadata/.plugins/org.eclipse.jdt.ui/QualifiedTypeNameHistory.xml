@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="jakarta.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.CascadeType"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+    <fullyQualifiedTypeName name="entidades.Direccion"/>
+    <fullyQualifiedTypeName name="entidades.Entrada"/>
+    <fullyQualifiedTypeName name="entidades.Pas"/>
+    <fullyQualifiedTypeName name="JPAControladorDao.PasFacadeImpl"/>
+    <fullyQualifiedTypeName name="JPAControladorDao.PeliculaFacadeImpl"/>
+    <fullyQualifiedTypeName name="JPAControladorDao.SalaFacadeImpl"/>
+    <fullyQualifiedTypeName name="org.hibernate.mapping.List"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Tuple"/>
+    <fullyQualifiedTypeName name="entidades.Sala"/>
+    <fullyQualifiedTypeName name="entidades.TempEquipoJugador"/>
+</qualifiedTypeNameHistroy>

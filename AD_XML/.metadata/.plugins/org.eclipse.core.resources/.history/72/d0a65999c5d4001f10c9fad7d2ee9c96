@@ -1,0 +1,5 @@
+package ejemplo0_JAXB;
+
+public class Localidad {
+
+}
