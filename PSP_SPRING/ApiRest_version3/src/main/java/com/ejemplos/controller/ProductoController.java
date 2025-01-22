@@ -1,7 +1,9 @@
 package com.ejemplos.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +14,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ejemplos.DTO.CreateProductoDTO;
+import com.ejemplos.DTO.ProductoDTO;
+import com.ejemplos.DTO.ProductoDTOConverter;
 import com.ejemplos.modelo.Producto;
 import com.ejemplos.modelo.ProductoRepositorio;
 
@@ -21,26 +26,32 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor // lombok crea el contructor
 public class ProductoController {
 	
-	private final ProductoRepositorio productoRepositorio;
+	@Autowired 
+	private final ProductoRepositorio productoRepositorio;  // con autowired ya no 
+	
+	@Autowired
+	private ProductoDTOConverter productoDTOConverter;
 	
 	@GetMapping("/producto") 
 	public ResponseEntity<?> obtenerTodos(){
 		List<Producto>result = productoRepositorio.findAll();
 		
 		if(result.isEmpty()) {
-			//devolvemos unarespuesta coom instancia de RepsonseEntity
 			return ResponseEntity.notFound().build();
 		}else {
-			/*queremos devolver la lista
-			  pero como el if devolvemos una respuesta
-			  404 usando la clase ResponseEntity
-			  debemos seguir usando la clase en la respuesta*/
-			return ResponseEntity.ok(result);
+			/*
+			 sobre la lista de productos creo una serie de objetos(con stream)
+			 sobre los objetos Producto llamo a un método map para ejecutar
+			 sobre cada producto el método convertirADto
+			 el mapa de productoDTO lo convierto con collect nuevamente a lista
+		**/
+			List<ProductoDTO> dtoList = result.stream()
+			.map(productoDTOConverter::convertirADto)
+			.collect(Collectors.toList());
+			return ResponseEntity.ok(dtoList);
 		}
 	}
-	
-	//http://localhost:8080/h2/
-	//http://localhost:8080/producto     -----------------------------------------------------------------------------
+	//http://localhost:8080/producto -----------------------------------------------------------------------------
 	
 	@GetMapping("/producto/{id}")
 	public ResponseEntity<?> obtenerUno(@PathVariable Long id) {
@@ -49,8 +60,10 @@ public class ProductoController {
 		//not found es el 404
 		if(result==null)
 			return ResponseEntity.notFound().build();
-		else
-			return ResponseEntity.ok(result); // 200	
+		else {
+			return ResponseEntity.ok(productoDTOConverter.convertirADto(result));
+		}
+				
 	}
 	
 	//en Postman para probarlo url: http://localhost:8080/producto
@@ -59,10 +72,19 @@ public class ProductoController {
 	// 1 Insertamos nuevo producto @param nuevo   2 @return producto insertado
 	
 	@PostMapping("/producto")
-	public  ResponseEntity<?> nuevoProducto(@RequestBody Producto nuevo) {
-		Producto saved = productoRepositorio.save(nuevo);
-		return  ResponseEntity.status(HttpStatus.CREATED).body(saved); //201 Created
+	public  ResponseEntity<?> nuevoProducto(@RequestBody CreateProductoDTO nuevo) {
+		Producto saved = productoDTOConverter.convertirAProd(nuevo);
+		return  ResponseEntity.status(HttpStatus.CREATED).body( productoRepositorio.save(saved)); //201 Created
 	}
+	
+	// http://localhost:8080/producto
+	
+/*
+	 {  "nombre":"Zumo PAPAYA",
+    	"precio" : 9,
+    	"categoriaId": 1  
+     }
+	 	*/
 	
 	// ACTUALIZA PRODUCTO | @param editar | @param id | @return  
 	
@@ -78,7 +100,6 @@ public class ProductoController {
 	}
 	
 	//para probarlo en Postman http://localhost:8080/producto/1452 --------------------------------------------------------------
-	
 	//Borrar
 		
 	@DeleteMapping("/producto/{id}") // da error porque tiene la misma URL

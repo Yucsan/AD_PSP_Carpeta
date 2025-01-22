@@ -78,7 +78,6 @@ public class ProductoController {
 	}
 	
 	//para probarlo en Postman http://localhost:8080/producto/1452 --------------------------------------------------------------
-	
 	//Borrar
 		
 	@DeleteMapping("/producto/{id}") // da error porque tiene la misma URL
@@ -91,20 +90,6 @@ public class ProductoController {
 		}
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 
 }
