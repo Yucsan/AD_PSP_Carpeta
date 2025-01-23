@@ -10,4 +10,12 @@
     <fullyQualifiedTypeName name="javax.xml.xpath.XPathFactory"/>
     <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
     <fullyQualifiedTypeName name="javax.xml.xpath.XPathConstants"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.JAXBContext"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.Marshaller"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.Unmarshaller"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="ejer_JAXB.Pais"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

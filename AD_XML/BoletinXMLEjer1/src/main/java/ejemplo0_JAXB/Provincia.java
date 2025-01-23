@@ -11,6 +11,7 @@ public class Provincia {
 		
 	}
 	
+	
 	public Provincia(String nombre, Localidad[] localidad) {
 		super();
 		this.nombre = nombre;
@@ -38,7 +39,11 @@ public class Provincia {
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return "Provincia [nombre=" + nombre + "]";
+	}
+
 	
 	
 	
