@@ -86,13 +86,21 @@ public class ProductoController {
      }
 	 	*/
 	
-	// ACTUALIZA PRODUCTO | @param editar | @param id | @return  
+	// MODIFICA PRODUCTO | @param editar | @param id | @return  
 	
 	@PutMapping("/producto/{id}")
-	public ResponseEntity<?>  editaProducto(@RequestBody Producto editar, @PathVariable Long id ) {
+	public ResponseEntity<?>  editaProducto(@RequestBody CreateProductoDTO editar, @PathVariable Long id ) {
 		if(productoRepositorio.existsById(id)) {
-			editar.setId(id);
-			return ResponseEntity.ok(productoRepositorio.save(editar)); //ok
+			Producto n = productoDTOConverter.convertirAProd(editar);			
+			n.setId(id);
+			
+			if(editar.getCategoriaId()==null)
+				n.setCategoria(productoRepositorio.findById(id).get().getCategoria() );
+			if(editar.getNombre()==null)
+				n.setNombre(productoRepositorio.findById(id).get().getNombre() );
+			if(editar.getPrecio()==0.0)
+				n.setPrecio(productoRepositorio.findById(id).get().getPrecio() );
+			return ResponseEntity.ok(productoRepositorio.save(n)); //ok
 		}else {
 			return ResponseEntity.notFound().build(); //404 no lo encuentro
 		}
