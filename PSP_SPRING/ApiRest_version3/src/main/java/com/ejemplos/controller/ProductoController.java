@@ -45,9 +45,7 @@ public class ProductoController {
 			 sobre cada producto el método convertirADto
 			 el mapa de productoDTO lo convierto con collect nuevamente a lista
 		**/
-			List<ProductoDTO> dtoList = result.stream()
-			.map(productoDTOConverter::convertirADto)
-			.collect(Collectors.toList());
+			List<ProductoDTO> dtoList = result.stream().map(productoDTOConverter::convertirADto).collect(Collectors.toList());
 			return ResponseEntity.ok(dtoList);
 		}
 	}
@@ -89,14 +87,19 @@ public class ProductoController {
 	// ACTUALIZA PRODUCTO | @param editar | @param id | @return  
 	
 	@PutMapping("/producto/{id}")
-	public ResponseEntity<?>  editaProducto(@RequestBody Producto editar, @PathVariable Long id ) {
+	public ResponseEntity<?> editarProducto(@RequestBody CreateProductoDTO editar, @PathVariable Long id) {
 		if(productoRepositorio.existsById(id)) {
-			editar.setId(id);
-			return ResponseEntity.ok(productoRepositorio.save(editar)); //ok
-		}else {
-			return ResponseEntity.notFound().build(); //404 no lo encuentro
-		}
-	
+			Producto n = productoDTOConverter.convertirAProd(editar);
+			n.setId(id);
+			if(editar.getCategoriaId()==null)
+				n.setCategoria(productoRepositorio.findById(id).get().getCategoria());
+			if(editar.getNombre()==null)
+				n.setNombre(productoRepositorio.findById(id).get().getNombre());
+			if(editar.getPrecio()==0.0)
+				n.setPrecio(productoRepositorio.findById(id).get().getPrecio());
+			return ResponseEntity.ok(productoRepositorio.save(n));
+		}else
+			return ResponseEntity.notFound().build();
 	}
 	
 	//para probarlo en Postman http://localhost:8080/producto/1452 --------------------------------------------------------------
