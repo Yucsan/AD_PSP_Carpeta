@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ejemplos.DTO.CategoriaDTO;
+import com.ejemplos.DTO.CategoriaDTOConverter;
 import com.ejemplos.DTO.CreateProductoDTO;
 import com.ejemplos.DTO.ProductoDTO;
 import com.ejemplos.DTO.ProductoDTOConverter;
 import com.ejemplos.modelo.Producto;
 import com.ejemplos.modelo.ProductoRepositorio;
+import com.ejemplos.modelo.*;
 
 import lombok.RequiredArgsConstructor;
 
@@ -29,9 +32,36 @@ public class ProductoController {
 	@Autowired 
 	private final ProductoRepositorio productoRepositorio;  // con autowired ya no 
 	
+	@Autowired 
+	private final CategoriaRepositorio categoriaRepositorio;
+	
 	@Autowired
 	private ProductoDTOConverter productoDTOConverter;
 	
+	@Autowired
+	private CategoriaDTOConverter categoriaDTOConverter;
+	
+	
+	@GetMapping("/categoria") 
+	public ResponseEntity<?> obtenerCate(){
+		List<Categoria>result = categoriaRepositorio.findAll();
+		
+		if(result.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}else {
+			List<CategoriaDTO> dtoList = result.stream()
+					.map(categoriaDTOConverter::convertirADto)
+					.collect(Collectors.toList());
+			return ResponseEntity.ok(dtoList);
+		}
+	}
+	
+	/*
+	 sobre la lista de productos creo una serie de objetos(con stream)
+	 sobre los objetos Producto llamo a un método map para ejecutar
+	 sobre cada producto el método convertirADto
+	 el mapa de productoDTO lo convierto con collect nuevamente a lista
+**/
 	@GetMapping("/producto") 
 	public ResponseEntity<?> obtenerTodos(){
 		List<Producto>result = productoRepositorio.findAll();
@@ -39,13 +69,10 @@ public class ProductoController {
 		if(result.isEmpty()) {
 			return ResponseEntity.notFound().build();
 		}else {
-			/*
-			 sobre la lista de productos creo una serie de objetos(con stream)
-			 sobre los objetos Producto llamo a un método map para ejecutar
-			 sobre cada producto el método convertirADto
-			 el mapa de productoDTO lo convierto con collect nuevamente a lista
-		**/
-			List<ProductoDTO> dtoList = result.stream().map(productoDTOConverter::convertirADto).collect(Collectors.toList());
+
+			List<ProductoDTO> dtoList = result.stream()
+					.map(productoDTOConverter::convertirADto)
+					.collect(Collectors.toList());
 			return ResponseEntity.ok(dtoList);
 		}
 	}

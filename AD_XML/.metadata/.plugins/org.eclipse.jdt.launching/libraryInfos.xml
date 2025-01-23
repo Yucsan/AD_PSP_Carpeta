@@ -3,4 +3,6 @@
     <libraryInfo home="/home/usuario/opt/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.9.v20231028-0858/jre" version="17.0.9"/>
     <libraryInfo home="/usr/lib/jvm/java-17-openjdk-amd64" version="17.0.13"/>
     <libraryInfo home="/home/usuario/opt/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.9.v20231028-0858" version="17.0.9"/>
+    <libraryInfo home="/usr/lib/jvm/java-21-openjdk-amd64" version="21.0.5"/>
+    <libraryInfo home="/usr/lib/jvm/java-11-openjdk-amd64" version="11.0.25"/>
 </libraryInfos>
