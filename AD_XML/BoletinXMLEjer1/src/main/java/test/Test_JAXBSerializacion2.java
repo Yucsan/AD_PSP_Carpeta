@@ -57,7 +57,10 @@ public class Test_JAXBSerializacion2 {
 		//mostramos el documento XML generado en la sálida estándar
 		marshaller2.marshal(pais, System.out);
 		
-		
+		FileOutputStream fos2 = new FileOutputStream(PAIS_DAT_FILE);
+		//guardamos el objeto serializacion en un documento xml
+		marshaller.marshal(pais, fos2);
+		fos2.close();
 		
 		
 		
