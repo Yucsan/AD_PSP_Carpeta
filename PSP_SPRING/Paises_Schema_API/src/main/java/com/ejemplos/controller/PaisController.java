@@ -36,7 +36,7 @@ public class PaisController {
 	private PaisDTOConverter paisDTOConverter;
 	
 	
-	@GetMapping("/producto") 
+	@GetMapping("/paises") 
 	public ResponseEntity<?> obtenerTodos(){
 		List<Pais>result = paisRepositorio.findAll();
 		
@@ -50,9 +50,9 @@ public class PaisController {
 			return ResponseEntity.ok(dtoList);
 		}
 	}
-	//http://localhost:8080/producto -----------------------------------------------------------------------------
+	//http://localhost:8080/paises -----------------------------------------------------------------------------
 	
-	@GetMapping("/producto/{id}")
+	@GetMapping("/pais/{id}")
 	public ResponseEntity<?> obtenerUno(@PathVariable Integer id) {
 		Pais result = paisRepositorio.findById(id).orElse(null); 
 		
@@ -67,21 +67,17 @@ public class PaisController {
 	//Postman url: http://localhost:8080/producto -----------------------------------------------------------------------------------------------------------------
 	// 1 Insertamos nuevo producto @param nuevo   2 @return producto insertado
 	
-	@PostMapping("/producto")
+	@PostMapping("/pais")
 	public  ResponseEntity<?> nuevoPais(@RequestBody CreatePaisDTO nuevo) {
 		Pais saved = paisDTOConverter.convertirAProd(nuevo);
 		return  ResponseEntity.status(HttpStatus.CREATED).body( paisRepositorio.save(saved)); //201 Created
 	}
 	
-	// http://localhost:8080/producto
-/*
-	 {  "nombre":"Zumo PAPAYA",
-    	"precio" : 9,
-    	"categoriaId": 1  } */
+	// http://localhost:8080/pais  |  {  "nombre": "Canada" }
 	
 	// ACTUALIZA PRODUCTO | @param editar | @param id | @return  
 	
-	@PutMapping("/producto/{id}")
+	@PutMapping("/pais/{id}")
 	public ResponseEntity<?> editarPais(@RequestBody CreatePaisDTO editar, @PathVariable Integer id) {
 		if(paisRepositorio.existsById(id)) {
 			Pais n = paisDTOConverter.convertirAProd(editar);
@@ -92,9 +88,9 @@ public class PaisController {
 	}
 	
 	//para probarlo en Postman http://localhost:8080/producto/1452 --------------------------------------------------------------
-	//Borrar
+	//BORRAR
 		
-	@DeleteMapping("/producto/{id}") // da error porque tiene la misma URL
+	@DeleteMapping("/pais/{id}") // da error porque tiene la misma URL
 	public ResponseEntity<?> borrarPais(@PathVariable Integer id ) {
 		if(paisRepositorio.existsById(id)) {
 			paisRepositorio.deleteById(id);
