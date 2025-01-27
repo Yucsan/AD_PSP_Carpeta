@@ -73,6 +73,15 @@ public class ProductoController {
 	
 	@PostMapping("/producto")
 	public  ResponseEntity<?> nuevoProducto(@RequestBody CreateProductoDTO nuevo) {
+		
+		/*
+		 Producto nuevoProducto = new Producto();
+		 nuevoProducto.setNombre(nuevo.getNombre());
+		 nuevoProducto.setNombre(nuevo.getPrecio());
+		 Categoria categoria = categoriaRepositorio.findById(nuevo.getCategoriaId()
+		 nuevoProducto.setCategoria(categoria);
+		 return ResponseEntity.status(HttpStatus.CREATED).body(productoRepositorio.save(nuevoProducto));*/
+		
 		Producto saved = productoDTOConverter.convertirAProd(nuevo);
 		return  ResponseEntity.status(HttpStatus.CREATED).body( productoRepositorio.save(saved)); //201 Created
 	}
@@ -94,7 +103,7 @@ public class ProductoController {
 			Producto n = productoDTOConverter.convertirAProd(editar);			
 			n.setId(id);
 			
-			if(editar.getCategoriaId()==null)
+			if(editar.getCategoriaIdcat()==null)
 				n.setCategoria(productoRepositorio.findById(id).get().getCategoria() );
 			if(editar.getNombre()==null)
 				n.setNombre(productoRepositorio.findById(id).get().getNombre() );
