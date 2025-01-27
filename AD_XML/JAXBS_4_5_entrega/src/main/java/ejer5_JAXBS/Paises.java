@@ -38,6 +38,14 @@ public class Paises {
 	public List<PaisHijo> getListaPaises() {
         return listaPaises;
     }
+
+
+	@Override
+	public String toString() {
+		return "Paises [listaPaises=" + listaPaises + "]";
+	}
+	
+	
     
     
 	

@@ -1,6 +1,7 @@
 package test;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,16 +11,20 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ejemplo0_JAXB.Provincia;
 import ejer5_JAXBS.PaisHijo;
 import ejer5_JAXBS.Paises;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
 
 
 public class Test_JAXB_Ejer5 {
 	
 	private static final String PAISES_GUARDA = "./salidas/paises.xml";
+	
+	private static final String PAISES_GUARDA2 = "./salidas/paises2.xml";
 
 	public static void main(String[] args) throws JAXBException, IOException {
 		
@@ -39,6 +44,12 @@ public class Test_JAXB_Ejer5 {
 		FileOutputStream fos = new FileOutputStream(PAISES_GUARDA);
 		marshaller.marshal(paises, fos); 
 		fos.close();
+		
+		
+		Unmarshaller unmarshaller = context.createUnmarshaller();
+		Paises paisesAux = (Paises) unmarshaller.unmarshal(new File(PAISES_GUARDA));
+		System.out.println("******** Paises cargado desde fichero XML ********");
+		System.out.println(paisesAux);
 		
 	}
 	
