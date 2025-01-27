@@ -609,3 +609,16 @@
 2025-01-23 16:02:59,435 [Worker-1: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1-sources.jar
 2025-01-23 16:02:59,437 [Worker-1: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.eclipse.angus:angus-activation:2.0.1
 2025-01-23 16:02:59,499 [Worker-9: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: BoletinXMLEjer1:BoletinXMLEjer1:0.0.1-SNAPSHOT @ /home/fernando/AD_PSP_Carpeta/AD_XML/BoletinXMLEjer1/pom.xml.
+2025-01-27 20:06:42,297 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-01-27 20:30:46,496 [Worker-44: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-01-27 20:30:46,497 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/fernando/AD_PSP_Carpeta/AD_XML/BoletinXMLEjer1/src/main/resources
+2025-01-27 20:30:46,500 [Worker-44: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-01-27 20:30:46,500 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/fernando/AD_PSP_Carpeta/AD_XML/BoletinXMLEjer1/src/test/resources
+2025-01-27 20:34:09,743 [Worker-46: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-01-27 20:34:09,743 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/fernando/AD_PSP_Carpeta/AD_XML/BoletinXMLEjer1/src/main/resources
+2025-01-27 20:34:09,745 [Worker-46: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-01-27 20:34:09,745 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/fernando/AD_PSP_Carpeta/AD_XML/BoletinXMLEjer1/src/test/resources
+2025-01-27 20:35:00,857 [Worker-45: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-01-27 20:35:00,858 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/fernando/AD_PSP_Carpeta/AD_XML/BoletinXMLEjer1/src/main/resources
+2025-01-27 20:35:00,859 [Worker-45: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-01-27 20:35:00,860 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/fernando/AD_PSP_Carpeta/AD_XML/BoletinXMLEjer1/src/test/resources

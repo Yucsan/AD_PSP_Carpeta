@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Date;
 
+import dom.DomXML;
 import ejemplo0_JAXB.Localidad;
 import ejemplo0_JAXB.Provincia;
 import ejer_JAXB.Pais;
@@ -57,7 +58,11 @@ public class Test_JAXBSerializacion2 {
 		//mostramos el documento XML generado en la sálida estándar
 		marshaller2.marshal(pais, System.out);
 		
+		FileOutputStream fos2 = new FileOutputStream(PAIS_DAT_FILE);// aqui estamos guardando el fichero pais
 		
+		marshaller2.marshal(pais, fos2); //guardamos el objeto serializacion en un documento xml
+		fos2.close();
+	
 		
 		
 		
