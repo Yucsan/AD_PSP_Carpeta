@@ -9,7 +9,7 @@ import java.util.Date;
 import dom.DomXML;
 import ejemplo0_JAXB.Localidad;
 import ejemplo0_JAXB.Provincia;
-import ejer_JAXB.Pais;
+import ejer4_JAXB.Pais;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
@@ -48,6 +48,7 @@ public class Test_JAXBSerializacion2 {
 		// producto de desearilizacion
 		//marshaler.marshal(provinciaAux, System.out);
 		
+		
 		System.out.println("-------------------- EJER 4 ---------------");
 		
 		JAXBContext context2 = JAXBContext.newInstance(Pais.class);
@@ -63,10 +64,6 @@ public class Test_JAXBSerializacion2 {
 		marshaller2.marshal(pais, fos2); //guardamos el objeto serializacion en un documento xml
 		fos2.close();
 	
-		
-		
-		
-		
 	}
 	
 	
@@ -98,6 +95,9 @@ public class Test_JAXBSerializacion2 {
 		Integer habitantes = 25000000;
 		Integer importancia = 30;
 		
+		Pais pais = new Pais(nombre,capital, fechaCenso, continente, habitantes, importancia);
+		
+		/*
 		Pais pais = new Pais();
 		pais.setNombre(nombre);
 		pais.setCapital(capital);
@@ -105,14 +105,10 @@ public class Test_JAXBSerializacion2 {
 		pais.setContinente(continente);
 		pais.setHabitantes(habitantes);
 		pais.setImportancia(importancia);
-		
+		*/
 		return pais;
 		
 	}
-	
-	
-	
-	
 	
 	
 	

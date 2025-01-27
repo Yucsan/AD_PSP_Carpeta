@@ -27,6 +27,9 @@
 		<item key="LimitValue" value="10"/>
 		<item key="SkipNull" value="false"/>
 		<item key="ToStringTemplateSelected" value="0"/>
+		<item key="InstanceOf" value="false"/>
+		<item key="Blocks" value="false"/>
+		<item key="Objects.equals &amp; Objects.hash" value="true"/>
 	</section>
 	<section name="AddGetterSetterDialog">
 		<item key="SortOrdering" value="false"/>
@@ -68,5 +71,22 @@
 		<item key="DIALOG_WIDTH" value="579"/>
 		<item key="DIALOG_HEIGHT" value="706"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+	<section name="DialogBounds_GenerateHashCodeEqualsDialog">
+		<item key="DIALOG_X_ORIGIN" value="997"/>
+		<item key="DIALOG_Y_ORIGIN" value="253"/>
+		<item key="DIALOG_WIDTH" value="572"/>
+		<item key="DIALOG_HEIGHT" value="622"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+	<section name="RefactoringWizard.preview">
+		<item key="width" value="600"/>
+		<item key="height" value="400"/>
+	</section>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item key="renameSubpackages" value="false"/>
+		<item key="updateTextualMatches" value="false"/>
+		<item key="updateQualifiedNames" value="false"/>
+		<item key="patterns" value="*"/>
 	</section>
 </section>

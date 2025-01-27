@@ -3,12 +3,11 @@ package test;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Date;
 
 import ejemplo0_JAXB.Localidad;
 import ejemplo0_JAXB.Provincia;
-import ejer_JAXB.Pais;
+import ejer4_JAXB.Pais;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
@@ -50,7 +49,7 @@ public class Test_JAXBSerializacion {
 		System.out.println("-------------------- EJER 4 ---------------");
 		
 		JAXBContext context2 = JAXBContext.newInstance(Pais.class);
-		Marshaller marshaller2 = context.createMarshaller();
+		Marshaller marshaller2 = context2.createMarshaller();
 		marshaller2.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true); // opional formato de tabuladores
 		
 		Pais pais = fillPais();

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pais>
+    <capital>Lima</capital>
+    <continente>Sudamerica</continente>
+    <fechaCenso>2025-01-28T00:19:14.966+01:00</fechaCenso>
+    <habitantes>25000000</habitantes>
+    <importancia>30</importancia>
+    <nombre>Perú</nombre>
+</pais>

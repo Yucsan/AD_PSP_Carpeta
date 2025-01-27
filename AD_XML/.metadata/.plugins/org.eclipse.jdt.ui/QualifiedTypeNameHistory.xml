@@ -12,10 +12,22 @@
     <fullyQualifiedTypeName name="javax.xml.xpath.XPathConstants"/>
     <fullyQualifiedTypeName name="jakarta.xml.bind.JAXBContext"/>
     <fullyQualifiedTypeName name="jakarta.xml.bind.Marshaller"/>
-    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
     <fullyQualifiedTypeName name="jakarta.xml.bind.Unmarshaller"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="ejer_JAXB.Pais"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="ejer_JAXB.Paises"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="ejer_JAXB.PaisHijo"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlElement"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlRootElement"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
 </qualifiedTypeNameHistroy>
