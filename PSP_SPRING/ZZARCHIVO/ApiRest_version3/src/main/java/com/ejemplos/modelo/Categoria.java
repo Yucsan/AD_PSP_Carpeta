@@ -12,7 +12,7 @@ public class Categoria {
 
 	
 	@Id
-	private Long idcat;
+	private Long id;
 	private String nombre;
 	
 	
