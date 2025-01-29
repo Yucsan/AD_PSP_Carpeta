@@ -1,17 +1,23 @@
 package ejer4_JAXB;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlTransient;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+
+@XmlType( propOrder = { "nombre", "fechaCenso", "capital","habitantes"} )// orden para el fichero
 
 @XmlRootElement
 public class Pais {
 	private String nombre;
 	private String capital;
-	private Date fechaCenso;
+	private LocalDate fechaCenso;
 	private String continente;
 	private Integer habitantes;
 	private Integer importancia;
@@ -19,7 +25,7 @@ public class Pais {
 	public Pais() {
 	}
 	
-	public Pais(String nombre, String capital, Date fechaCenso, String continente, Integer habitantes,
+	public Pais(String nombre, String capital, LocalDate fechaCenso, String continente, Integer habitantes,
 			Integer importancia) {
 		super();
 		this.nombre = nombre;
@@ -51,12 +57,13 @@ public class Pais {
 		return nombre;
 	}
 
-
+	
+	@XmlElement(name = "Pais_Nombre")  // para que en el fichero aparesca este nombre
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
+	@XmlElement(name = "Pais_Capital") 
 	public String getCapital() {
 		return capital;
 	}
@@ -67,12 +74,13 @@ public class Pais {
 	}
 
 
-	public Date getFechaCenso() {
+	public LocalDate getFechaCenso() {
 		return fechaCenso;
 	}
 
-
-	public void setFechaCenso(Date fechaCenso) {
+	@XmlElement (name = "Pais_censo")
+	@XmlJavaTypeAdapter( AdaptadorFecha.class )
+	public void setFechaCenso(LocalDate fechaCenso) {
 		this.fechaCenso = fechaCenso;
 	}
 
@@ -80,8 +88,11 @@ public class Pais {
 	public String getContinente() {
 		return continente;
 	}
-
-
+	
+	
+	// si quieres que aparesca y usas @XmlType( propOrder tienes que agregarlo al orden
+	
+	@XmlTransient // esto es para que pase de esta informacion en el fichero
 	public void setContinente(String continente) {
 		this.continente = continente;
 	}
@@ -101,7 +112,7 @@ public class Pais {
 		return importancia;
 	}
 
-
+	@XmlAttribute( name = "importancia", required = true ) 
 	public void setImportancia(Integer importancia) {
 		this.importancia = importancia;
 	}

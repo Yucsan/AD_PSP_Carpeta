@@ -3,6 +3,7 @@ package ejer5_JAXBS;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="Paises")
@@ -29,7 +30,7 @@ public class Paises {
     	}
     }
     
-    
+    @XmlElement(name = "Pais")
     public void setListaPaises(List<PaisHijo> listaPaises) {
 		this.listaPaises = listaPaises;
 	}

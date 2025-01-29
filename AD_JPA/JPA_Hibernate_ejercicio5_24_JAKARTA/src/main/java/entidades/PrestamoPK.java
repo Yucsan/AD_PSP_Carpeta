@@ -1,7 +1,7 @@
 package entidades;
 
 import java.io.Serializable;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 /**
  * The primary key class for the prestamos database table.

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import ejemplo0_JAXB.Provincia;
 import ejer5_JAXBS.PaisHijo;
 import ejer5_JAXBS.Paises;
 import jakarta.xml.bind.JAXBContext;
@@ -24,8 +23,6 @@ public class Test_JAXB_Ejer5 {
 	
 	private static final String PAISES_GUARDA = "./salidas/paises.xml";
 	
-	private static final String PAISES_GUARDA2 = "./salidas/paises2.xml";
-
 	public static void main(String[] args) throws JAXBException, IOException {
 		
 		System.out.println("-------------------- EJER 5 ---------------");

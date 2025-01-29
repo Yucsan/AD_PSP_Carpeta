@@ -2,6 +2,7 @@ package test;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Date;
 
 import ejer4_JAXB.Pais;
@@ -37,7 +38,9 @@ public class Test_JAXB_Ejer4 {
 		
 		String nombre = "Perú";
 		String capital = "Lima";
-		Date fechaCenso  = new Date();
+		
+		LocalDate fechaCenso = LocalDate.of(2025, 1, 28);
+		//Date fechaCenso  = new Date();
 		String continente = "Sudamerica";
 		Integer habitantes = 25000000;
 		Integer importancia = 30;
