@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="javax.xml.parsers.ParserConfigurationException"/>
     <fullyQualifiedTypeName name="dom.DomXML"/>
     <fullyQualifiedTypeName name="org.xml.sax.SAXException"/>
-    <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
     <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
     <fullyQualifiedTypeName name="javax.xml.xpath.XPathFactory"/>
@@ -12,10 +11,19 @@
     <fullyQualifiedTypeName name="javax.xml.xpath.XPathConstants"/>
     <fullyQualifiedTypeName name="jakarta.xml.bind.JAXBContext"/>
     <fullyQualifiedTypeName name="jakarta.xml.bind.Marshaller"/>
-    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
     <fullyQualifiedTypeName name="jakarta.xml.bind.Unmarshaller"/>
     <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="ejer_JAXB.Pais"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlType"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlElement"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlTransient"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlAttribute"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.adapters.XmlAdapter"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="ejer6_JAXBS.Persona"/>
 </qualifiedTypeNameHistroy>

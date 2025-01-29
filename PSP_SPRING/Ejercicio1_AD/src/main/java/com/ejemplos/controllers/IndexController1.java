@@ -2,20 +2,19 @@ package com.ejemplos.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.ejemplos.model.Usuario;
 
 @Controller
 @RequestMapping("/app") // agrega carpetas a la url
 public class IndexController1 {
+	
 	@GetMapping({ "/index" })
 	public String index() {
-		return ("index");
+		return ("index"); //recuerda esto llama a un html en templates index.html
 	}
 
 //  http://localhost:8080/app/index	 
@@ -24,9 +23,7 @@ public class IndexController1 {
 	@GetMapping("/index2")
 	public String index2(Model model) {
 		model.addAttribute("titulo", "hola Spring:pasar datos al controlador" + " a la vista con la interfaz Model");
-
 		return ("/index2");
-
 	}
 
 	// otra forma
@@ -38,7 +35,7 @@ public class IndexController1 {
 		usuario.setApellido("Perez Del Rio");
 		usuario.setEmail("rr@gmail.com");
 
-		model.addAttribute("usuario", usuario);
+		model.addAttribute("usuario", usuario); // la clase y la variable deben llamarse igual que la clase en minuscula
 		model.addAttribute("titulo", "Perfil".concat(usuario.getNombre()));
 
 		return "perfil";
