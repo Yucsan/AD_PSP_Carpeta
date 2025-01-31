@@ -22,9 +22,13 @@ public class UsuarioService {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	public List<Usuario>ObtenerUsuarios(){
-		Usuario[] response = restTemplate.getForObject(basePath+"usuario", Usuario[].class);
+	public List<Usuario>obtenerUsuarios(){
+		Usuario[] response = restTemplate.getForObject(basePath+"/usuario", Usuario[].class);
 				return Arrays.asList(response);
+	}
+	
+	public void borrarUsuario(Long id) {
+		restTemplate.delete(basePath+"/usuario/"+id);
 	}
 	
 	

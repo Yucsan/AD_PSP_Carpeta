@@ -1,4 +1,4 @@
-package cim.ejemplos.configuracion;
+package com.ejemplos.configuracion;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
