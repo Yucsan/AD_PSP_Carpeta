@@ -28,22 +28,10 @@ public class UsuarioController {
 	@GetMapping("/usuario") 
 	public ResponseEntity<?> obtenerTodos(){
 		List<Usuario>result = usuarioRepositorio.findAll();
-		
-		if(result.isEmpty()) {
-			//devolvemos unarespuesta coom instancia de RepsonseEntity
-			return ResponseEntity.notFound().build();
-		}else {
-			/*queremos devolver la lista
-			  pero como el if devolvemos una respuesta
-			  404 usando la clase ResponseEntity
-			  debemos seguir usando la clase en la respuesta*/
 			return ResponseEntity.ok(result);
-		}
 	}
 	
-	//http://localhost:8080/h2/
-	//http://localhost:8080/producto     -----------------------------------------------------------------------------
-	
+	//busqueda por id
 	@GetMapping("/usuario/{id}")
 	public ResponseEntity<?> obtenerUno(@PathVariable Long id) {
 		Usuario result = usuarioRepositorio.findById(id).orElse(null); 
@@ -56,10 +44,8 @@ public class UsuarioController {
 	}
 	
 	//en Postman para probarlo url: http://localhost:8080/producto
-	//-----------------------------------------------------------------------------------------------------------------
 	
-	// 1 Insertamos nuevo producto @param nuevo   2 @return producto insertado
-	
+	//1 Insertamos nuevo producto @param nuevo   2 @return producto insertado
 	@PostMapping("/usuario")
 	public  ResponseEntity<?> nuevoUsuario(@RequestBody Usuario nuevo) {
 		Usuario saved = usuarioRepositorio.save(nuevo);
@@ -67,7 +53,6 @@ public class UsuarioController {
 	}
 	
 	// ACTUALIZA usuario | @param editar | @param id | @return  
-	
 	@PutMapping("/usuario/{id}")
 	public ResponseEntity<?>  editaUsuario(@RequestBody Usuario editar, @PathVariable Long id ) {
 		if(usuarioRepositorio.existsById(id)) {
@@ -80,8 +65,7 @@ public class UsuarioController {
 	}
 	
 	//para probarlo en Postman http://localhost:8080/producto/1452 --------------------------------------------------------------
-	//Borrar
-		
+	//Borrar	
 	@DeleteMapping("/usuario/{id}") // da error porque tiene la misma URL
 	public ResponseEntity<?> borrarUsuario2(@PathVariable Long id ) {
 		if(usuarioRepositorio.existsById(id)) {

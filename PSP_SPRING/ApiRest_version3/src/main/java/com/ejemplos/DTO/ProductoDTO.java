@@ -3,8 +3,7 @@ package com.ejemplos.DTO;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Getter @Setter
 public class ProductoDTO {
 	
 	private Long id;

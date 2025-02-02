@@ -32,7 +32,7 @@ public class ProductoController {
 	@Autowired
 	private ProductoDTOConverter productoDTOConverter;
 	
-	@GetMapping("/producto") 
+	@GetMapping("/producto")  
 	public ResponseEntity<?> obtenerTodos(){
 		List<Producto>result = productoRepositorio.findAll();
 		

@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/home/fernando/AD_PSP_Carpeta/AD_JPA"/>
 			<item value="/home/usuario/comparteme/Fernando Proyectos/AD_JPA/JPA_Hibernate_Boletin5_Cine_Jakarta"/>
 			<item value="/home/usuario/comparteme/Fernando Proyectos/AD_JPA"/>
 		</list>
