@@ -29,6 +29,11 @@ public class EmpresaDTOConverter {
 		return modelMapper.map(empresa,  EmpresaDTO.class);
 	}
 	
+	public Empresa convertirAEmpre(CreateEmpresaDTO createEmpresaDto) {
+		return modelMapper.map(createEmpresaDto, Empresa.class);
+	}
+	
+	/*
 	public Empresa convertirAEmpre(CreateEmpresaDTO createEmpresaDTO) {
 
 	    Empresa empresa = modelMapper.map(createEmpresaDTO, Empresa.class);
@@ -51,7 +56,7 @@ public class EmpresaDTOConverter {
 	    
 	    return empresa;
 	}
-
+*/
 	
 	
 	/*
