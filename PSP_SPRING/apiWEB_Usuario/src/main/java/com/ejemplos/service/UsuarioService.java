@@ -32,4 +32,15 @@ public class UsuarioService {
 	}
 	
 	
+	public Usuario obtenerusuario(Long id) {
+		return restTemplate.getForObject(basePath+"/usuario/"+id, Usuario.class);
+	}
+	
+	
+	public void crearUsuario (Usuario usuario) {
+		restTemplate.postForObject(basePath+"/usuario", usuario, Usuario.class);
+	}
+	
+	
+	
 }
