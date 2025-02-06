@@ -55,6 +55,26 @@ public class UsuarioController {
 			return ResponseEntity.ok(result); // 200	
 	}
 	
+	//http://localhost:8090/apirestUsuario/saludo/1
+	
+	@GetMapping("/saludo/{id}")
+	public ResponseEntity<?> saludo(@PathVariable Long id) {
+		Usuario result = usuarioRepositorio.findById(id).orElse(null); 
+		String saludo = "Hola "+result.getNombre();
+		
+		//not found es el 404
+		if(result==null)
+			return ResponseEntity.notFound().build();
+		else
+			return ResponseEntity.ok(saludo); // 200	
+	}
+	
+	
+	
+	
+	
+	
+	
 	//en Postman para probarlo url: http://localhost:8080/producto
 	//-----------------------------------------------------------------------------------------------------------------
 	
