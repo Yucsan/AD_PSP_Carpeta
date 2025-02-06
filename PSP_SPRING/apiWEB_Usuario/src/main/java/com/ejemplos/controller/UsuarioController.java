@@ -2,6 +2,7 @@ package com.ejemplos.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -34,14 +35,10 @@ public class UsuarioController {
 	public String listar(Model model) {
 		model.addAttribute("titulo","Listado de usuarios");	
 		
-		List<Usuario>usuarios = usuarioService.obtenerUsuarios();
-	
-		
-		if(usuarios.isEmpty()){
-			
-			model.addAttribute("usuarios", usuarios );
-		}else {			
-			model.addAttribute("usuarios", usuarioService.obtenerUsuarios() );
+		try {
+			model.addAttribute("usuarios", usuarioService.obtenerUsuarios() );	
+		}catch(Exception e1) {
+			model.addAttribute("usuarios", new ArrayList<Usuario>());
 		}
 		
 		return "listar";
@@ -57,7 +54,8 @@ public class UsuarioController {
 		return "redirect:/listado";
 	}
 	
-	
+	// Para insertar Datos
+	//fase 1 mostrar formulario
 	@GetMapping(value = "/form")
 	public String crear(Model model) {
 		Usuario usuario = new Usuario(); // objeto mismo nombre que la clase
@@ -66,7 +64,6 @@ public class UsuarioController {
 		model.addAttribute("usuario", usuario);
 		model.addAttribute("titulo", "Formulario de usuario");
 		return "formsincss";
-		//fase 1 mostrar formulario
 	}
 	
 	/*  2da fase el usuario envia los datos cuando se hace sumit del formulario  
@@ -76,6 +73,24 @@ public class UsuarioController {
 		usuarioService.crearUsuario(usuario);
 		return "redirect:/listado";
 	}
+	
+	@GetMapping("/form/{id}")
+	public String editar(@PathVariable Long id, Model model) {
+		
+		Usuario usuario = null;
+		if(id>0) {
+			usuario = usuarioService.obtenerusuario(id);
+		}else {
+			return "redirect:/listado ";
+		}
+		model.addAttribute("usuario", usuario);
+		model.addAttribute("titulo", "Editar Usuario");
+		return "formsincss";
+		
+	}
+	
+	
+	
 	
 	
 	

@@ -27,8 +27,10 @@
 				<td th:text="${usuario.nombre}"></td>
 				<td th:text="${usuario.avatar}"></td>
 				<td th:text="${usuario.mail}"></td>
+				<td><a th:href="@{/form/} + ${usuario.id}" th:text="editar"></a></td>
 				<td><a th:href="@{/eliminar/} + ${usuario.id}">eliminar</a></td>
-				<td><a th:href="${'/eliminar/' + usuario.id}">eliminar</a></td>
+				<td><a th:href="${'/eliminar/' + usuario.id}" 
+					onclick="return confirm('estas seguro que quieres eliminar?')" >eliminar</a></td>
 			</tr>
 		</tbody>
 	</table>

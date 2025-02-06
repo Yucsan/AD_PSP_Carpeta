@@ -41,6 +41,10 @@ public class UsuarioService {
 		restTemplate.postForObject(basePath+"/usuario", usuario, Usuario.class);
 	}
 	
+	public void actualizaUsuario(Long id, Usuario usuario) {
+		restTemplate.put(basePath+"/usuario/"+id, usuario);
+	}
+	
 	
 	
 }
