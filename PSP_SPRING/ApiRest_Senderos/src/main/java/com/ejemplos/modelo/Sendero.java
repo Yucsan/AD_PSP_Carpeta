@@ -23,7 +23,7 @@ public class Sendero {
 	private String dificultad;
 	
 	@ManyToOne
-	@JoinColumn(name = "cod_sendero")
+	@JoinColumn(name = "cod_municipio")
 	private Sendero sendero;
 	
 	

@@ -9,6 +9,6 @@ public class CreateSenderoDTO {
 	private String nombre;
 	private Integer distancia;
 	private String dificultad;
-	private Long municipioIdmuni;
+	private String municipioIdmuni;
 
 }
