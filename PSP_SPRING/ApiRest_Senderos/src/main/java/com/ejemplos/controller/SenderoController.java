@@ -67,6 +67,13 @@ public class SenderoController {
 	
 	@PostMapping("/sendero")
 	public  ResponseEntity<?> nuevosendero(@RequestBody CreateSenderoDTO nuevo) {
+		
+		// Imprimir los valores del DTO para verificar
+	    System.out.println("ID: " + nuevo.getId() );
+	    System.out.println("nombre: " + nuevo.getNombre() );
+	    System.out.println("distancia: " + nuevo.getDistancia() );
+	    System.out.println("dificultad: " + nuevo.getDificultad() );
+	    System.out.println("getMunicipioIdmuni: " + nuevo.getMunicipioIdmuni() );
 				
 		Sendero saved = senderoDTOConverter.convertirASendero(nuevo);
 		return  ResponseEntity.status(HttpStatus.CREATED).body( senderoRepositorio.save(saved)); //201 Created
@@ -85,16 +92,21 @@ public class SenderoController {
 	
 	@PutMapping("/sendero/{id}")
 	public ResponseEntity<?>  editasendero(@RequestBody CreateSenderoDTO editar, @PathVariable String id ) {
+		 System.out.println("******* ID: " + editar.getId() );
+		 
 		if(senderoRepositorio.existsById(id)) {
 			Sendero n = senderoDTOConverter.convertirASendero(editar);			
 			n.setId(id);
 			
 			if(editar.getMunicipioIdmuni() == null )
-				n.setSendero(senderoRepositorio.findById(id).get().getSendero() );
+				n.setMunicipio(senderoRepositorio.findById(id).get().getMunicipio());
+				
 			if(editar.getNombre() == null)
 				n.setNombre(senderoRepositorio.findById(id).get().getNombre() );
+			
 			if(editar.getDistancia() == null)
 				n.setDificultad(senderoRepositorio.findById(id).get().getDificultad());
+			
 			if(editar.getDificultad() == null)
 				n.setDificultad(senderoRepositorio.findById(id).get().getDificultad());
 			

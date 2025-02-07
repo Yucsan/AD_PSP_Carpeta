@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter @Setter
 public class SenderoDTO {
 	
-	private Long id;
+	private String id;
 	private String nombre;
 	private Integer distancia;
 	private String dificultad;
